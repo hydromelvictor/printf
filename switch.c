@@ -38,6 +38,16 @@ nbre = va_arg(ap, int);
 count += number(nbre);
 count++;
 break;
+case 'b':
+nbre = va_arg(ap, int);
+count += binary(nbre);
+count++;
+break;
+case 'o':
+nbre = va_arg(ap, unsigned int);
+count += octal(nbre);
+count++;
+break;
 }
  return (count);
 }
