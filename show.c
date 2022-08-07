@@ -4,6 +4,15 @@
 #include <stdarg.h>
 #include <string.h>
 #include <unistd.h>
+
+/**
+ * _print - Print character according to format
+ * @format : format to print
+ * @... - ....
+ *
+ * Return : Always return 0 (on success)
+ */
+
 int _printf(const char *format, ...)
 {
 va_list ap;

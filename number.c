@@ -1,9 +1,19 @@
 #include "main.h"
 #include <unistd.h>
-int number(int n) 
+
+
+
+/**
+ * number - print number
+ * @n : number to print
+ *
+ * Return : Always return 0 (on succes)
+ */
+
+int number(int n)
 {
   unsigned int m, d, count, len = 0;
-  if (n < 0) 
+  if (n < 0)
   {
     int c = 45;
     write(1, &c, 1);

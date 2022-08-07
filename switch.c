@@ -3,6 +3,16 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+/**
+ * swhiteCase - to print white space
+ * @c : ...
+ * @count : ...
+ * @ap : ...
+ *
+ * Return : Always return 0 on success
+ */
+
 int swhiteCase (char c, int count, va_list ap)
 {
 char *str = malloc(sizeof(char));
