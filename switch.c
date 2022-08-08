@@ -40,7 +40,7 @@ int wordSwitch(char c, va_list ap)
 {
   int count = 0;
   char s = ' ';
-  char *str = malloc(sizeof(char));
+  char *str = malloc(1 + sizeof(char));
   if (str == NULL) {
     return (count);
   }
@@ -62,6 +62,14 @@ int wordSwitch(char c, va_list ap)
   }
   return (count);
 }
+
+/**
+ * numberSwitch - switch numbers
+ * @c: character
+ * @ap : variadic
+ *
+ * @Return : always return 0 (on success)
+ */
 
 int numberSwitch(char c, va_list ap)
 {
