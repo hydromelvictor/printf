@@ -5,7 +5,7 @@
 
 /**
  * octal
- *@n : ...
+ *@n : ....
  *
  *Return : Aways retur 0 (on succes)
  */
