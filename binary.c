@@ -9,7 +9,7 @@ int binary(unsigned int n)
     if(t == NULL)
     {
     return 0;
-    } 
+    }
     if(n < 2)
     {
         *t = n;

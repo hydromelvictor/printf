@@ -36,7 +36,7 @@ int hexal(unsigned int n, char c)
     if(t == NULL)
     {
     return 0;
-    } 
+    }
     if(n < 16)
     {
         *t = n;
