@@ -3,19 +3,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+int print(char *str)
+{
+  int j = 0, count = 0;
+    if(str == NULL)
+    {
+        return 0;
+    }
+    while(str[j])
+    {
+      write(1, &str[j], 1);
+      j++;
+      count++;
+    }
+    return count;
+}
 
-/**
- * swhiteCase - to print white space
- * @c : ...
- * @count : ...
- * @ap : ...
- *
- * Return : Always return 0 on success
- */
-
-int swhiteCase(char c, int count, va_list ap) {
+int wordSwitch(char c, va_list ap)
+{
+  int count = 0;
   char s = ' ';
-  int j = 0, nbre = 0;
   char *str = malloc(sizeof(char));
   if (str == NULL) {
     return (count);
@@ -33,22 +40,17 @@ int swhiteCase(char c, int count, va_list ap) {
     break;
   case 's':
     *str = *va_arg(ap, char *);
-    if(str == NULL)
-    {
-        break;
-    }
-    while(str[j])
-    {
-      write(1, &str[j], 1);
-      j++;
-      count++;
-    }
-    count++;
+    count += print(str);
     break;
-  case '%':
-    write(1, &c, 1);
-    count++;
-    break;
+  }
+  return (count);
+}
+
+int numberSwitch(char c, va_list ap)
+{
+   int nbre = 0, count  = 0;
+  switch (c)
+  {
   case 'i':
     nbre = va_arg(ap, int);
     count += number(nbre);
@@ -59,6 +61,15 @@ int swhiteCase(char c, int count, va_list ap) {
     count += number(nbre);
     count++;
     break;
+  }
+  return count;
+}
+
+int nodecimalCase(char c, va_list ap)
+{
+  int count = 0, nbre = 0;
+    switch (c)
+  {
   case 'b':
     nbre = va_arg(ap, int);
     count += binary(nbre);
@@ -84,6 +95,39 @@ int swhiteCase(char c, int count, va_list ap) {
     count += nosigned(nbre);
     count++;
     break;
+  }
+  return count;
+}
+
+/**
+ * swhiteCase - to print white space
+ * @c : ...
+ * @count : ...
+ * @ap : ...
+ *
+ * Return : Always return 0 on success
+ */
+int swhiteCase(char c, int count, va_list ap) {
+  char *str = malloc(sizeof(char));
+  if (str == NULL) {
+    return (count);
+  }
+  if(c == 'c' ||c =='s')
+  {
+    count += wordSwitch(c, ap);
+  }
+  if(c=='i' || c=='d')
+  {
+   count += numberSwitch(c, ap);
+  }
+  if(c=='b' || c=='o' || c=='x' || c=='X' || c=='u')
+  {
+    nodecimalCase(c, ap);
+  }
+  if(c =='%')
+  {
+    write(1, &c, 1);
+    count++;
   }
   free(str);
   return (count);
