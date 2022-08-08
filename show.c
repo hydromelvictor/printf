@@ -8,7 +8,7 @@
 /**
  * _print - Print character according to format
  * @format : format to print
- * @... - ....
+ * @... - .....
  *
  * Return : Always return 0 (on success)
  */

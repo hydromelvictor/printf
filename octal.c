@@ -9,7 +9,7 @@ int octal(unsigned int n)
     if(t == NULL)
     {
     return 0;
-    } 
+    }
     if(n < 8)
     {
         *t = n;
