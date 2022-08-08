@@ -3,6 +3,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+
+/**
+ * print - print character
+ * @str : character to print
+ *
+ * Return : alway sreurn 0 (on success)
+ */
+
 int print(char *str)
 {
   int j = 0, count = 0;
