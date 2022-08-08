@@ -68,7 +68,7 @@ int wordSwitch(char c, va_list ap)
  * @c: character
  * @ap : variadic
  *
- * @Return : always return 0 (on success)
+ * Return : always return 0 (on success)
  */
 
 int numberSwitch(char c, va_list ap)
@@ -89,6 +89,15 @@ int numberSwitch(char c, va_list ap)
   }
   return count;
 }
+
+/**
+ * nodecimalCase - .....
+ * @c : ...
+ * @ap : ...
+ *
+ * Return : always return 0 (on success)
+ */
+
 
 int nodecimalCase(char c, va_list ap)
 {
