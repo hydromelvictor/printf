@@ -33,7 +33,7 @@ int print(char *str)
  * @c : character
  * @ap : variadic
  *
- * @Return : always return 0 (on success)
+ * Return : always return 0 (on success)
  */
 
 int wordSwitch(char c, va_list ap)

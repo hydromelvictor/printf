@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+/**
+ * octal
+ *@n : ...
+ *
+ *Return : Aways retur 0 (on succes)
+ */
+
+
 int octal(unsigned int n)
 {
     int i = 0, count = 0;
