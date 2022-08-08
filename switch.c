@@ -28,6 +28,14 @@ int print(char *str)
     return count;
 }
 
+/**
+ * wordSwitch - switch word
+ * @c : character
+ * @ap : variadic
+ *
+ * @Return : always return 0 (on success)
+ */
+
 int wordSwitch(char c, va_list ap)
 {
   int count = 0;
