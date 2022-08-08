@@ -31,5 +31,6 @@ int octal(unsigned int n)
         unsigned int c = t[i] + '0' ;
         write(1, &c, sizeof(unsigned int));
     }
+    free(t);
     return (count);
 }

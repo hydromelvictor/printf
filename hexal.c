@@ -2,9 +2,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+char letter(int n, char c)
+{
+    char p = ' ';
+  switch (n) {
+          case 10:
+            p = (c == 'x') ? 'a' : 'A';
+            break;
+          case 11:
+            p = (c == 'x') ? 'b' : 'B';
+            break;
+          case 12:
+            p = (c == 'x') ? 'c' : 'C';
+            break;
+          case 13:
+            p = (c == 'x') ? 'd' : 'D';
+            break;
+          case 14:
+            p = (c == 'x') ? 'e' : 'E';
+            break;
+          case 15:
+            p = (c == 'x') ? 'f' : 'F';
+            break;
+          }
+          return (p);
+}
+
 int hexal(unsigned int n, char c)
 {
     int i = 0, count = 0;
+    char p = ' ';
     int *t = malloc(sizeof(int));
     if(t == NULL)
     {
@@ -28,30 +55,16 @@ int hexal(unsigned int n, char c)
     }
     for(; i >= 0; i--)
     {
-        int p = t[i] + '0';
-        if(p < 10)
+        if(t[i]< 10)
         {
-            write(1, &p, sizeof(int));
+             p = t[i] + '0';
         }
         else
         {
-            char s = ' ';
-            switch (p) {
-                case 10 : s = (c == 'x') ? 'a' : 'A'; 
-                break;
-                case 11 :  s = (c=='x') ? 'b' : 'B';
-                break;
-                case 12 : s = (c=='x') ? 'c' : 'C';
-                break;
-                case 13 : s = (c=='x') ? 'd' : 'D';
-                break;
-                case 14 : s = (c=='x') ? 'e' : 'E';
-                break;
-                case 15 : s = (c=='x') ? 'f' : 'F';
-                break;
-            }
-        write(1, &s, sizeof(char));
+            p = letter(t[i], c);
         }
+        write(1, &p, 1);
     }
+    free(t);
     return (count);
 }

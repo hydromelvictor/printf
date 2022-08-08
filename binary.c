@@ -31,5 +31,6 @@ int binary(unsigned int n)
         int c = t[i] + '0';
         write(1, &c, sizeof(int));
     }
+    free(t);
     return (count);
 }

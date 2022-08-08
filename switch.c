@@ -14,21 +14,34 @@
  */
 
 int swhiteCase(char c, int count, va_list ap) {
+  char s = ' ';
+  int j = 0, nbre = 0;
   char *str = malloc(sizeof(char));
-  int j, nbre = 0;
   if (str == NULL) {
     return (count);
   }
-  switch (c) {
+  switch (c)
+  {
   case 'c':
-    str = va_arg(ap, char *);
-    write(1, &str, 1);
+    s =(char) va_arg(ap, int);
+    if(str == NULL)
+    {
+        break;
+    }
+    write(1, &s, 1);
     count++;
     break;
   case 's':
-    str = va_arg(ap, char *);
-    for (j = 0; str[j] != '\0'; j++, count++) {
+    *str = *va_arg(ap, char *);
+    if(str == NULL)
+    {
+        break;
+    }
+    while(str[j])
+    {
       write(1, &str[j], 1);
+      j++;
+      count++;
     }
     count++;
     break;
@@ -72,5 +85,6 @@ int swhiteCase(char c, int count, va_list ap) {
     count++;
     break;
   }
+  free(str);
   return (count);
 }

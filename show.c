@@ -4,7 +4,6 @@
 #include <stdarg.h>
 #include <string.h>
 #include <unistd.h>
-
 /**
  * _print - Print character according to format
  * @format : format to print
@@ -12,7 +11,6 @@
  *
  * Return : Always return 0 (on success)
  */
-
 int _printf(const char *format, ...)
 {
 va_list ap;
@@ -22,11 +20,11 @@ if(format == NULL)
 return (charCount);
 }
 va_start(ap, format);
-for (i = 0; format[i] != '\0'; i++, charCount++)
+while(format[i])
 {
 if(format[i] == '%')
 {
-if(format[i + 1] != '\0')
+if(format[i + 1])
 {
 i++;
 charCount++;
@@ -34,7 +32,10 @@ charCount++;
 charCount += swhiteCase(format[i], charCount, ap);
 i++;
 }
-write(1, &format[i], sizeof(char));
+write(1, &format[i], 1);
+i++;
+charCount++;
 }
+va_end(ap);
 return (charCount);
 }

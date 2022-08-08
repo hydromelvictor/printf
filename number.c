@@ -1,8 +1,5 @@
 #include "main.h"
 #include <unistd.h>
-
-
-
 /**
  * number - print number
  * @n : number to print
