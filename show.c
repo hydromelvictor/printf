@@ -24,7 +24,7 @@ return (charCount);
 va_start(ap, format);
 for (i = 0; format[i] != '\0'; i++, charCount++)
 {
-if(format[i] == '%' && format[i - 1] != '\\')
+if(format[i] == '%')
 {
 if(format[i + 1] != '\0')
 {
@@ -33,10 +33,6 @@ charCount++;
 }
 charCount += swhiteCase(format[i], charCount, ap);
 i++;
-}
-else if (format[i] == '\\')
-{
-continue;
 }
 write(1, &format[i], sizeof(char));
 }
