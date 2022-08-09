@@ -1,6 +1,15 @@
 #include  "main.h"
 #include <stdarg.h>
 #include <stdio.h>
+
+
+/**
+ * _printf - print character to stdout
+ * @format: format to print
+ *
+ * Return: Always return 0 (on success)
+ */
+
 int _printf(const char *format, ...)
 {
     va_list ap;
