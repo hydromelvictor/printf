@@ -40,6 +40,6 @@ format is valid or invalid and according with the verification the resulting out
 ## Return Value
 
 
-Upon successful return, the **_printf()** function return the number of characters printed (excluding the null byte used to end output to strings).
+Upon successful return, the **printf()** function return the number of characters printed (excluding the null byte used to end output to strings).
 
 If an output error is encountered, a negative value is returned.
