@@ -43,3 +43,21 @@ format is valid or invalid and according with the verification the resulting out
 Upon successful return, the **printf()** function return the number of characters printed (excluding the null byte used to end output to strings).
 
 If an output error is encountered, a negative value is returned.
+
+## Examples
+
+**#include "main.h"**
+
+printf("Hello Victor"); **// the output will be: Hello Victor**
+
+printf("%c", 'S'); // **the output will be: S**
+
+printf("%s", "Victor is a guru of C programming"); **// the output will be: Victor is a guru of C programming**
+
+printf("%!\n"); **// the output will be '%!'**
+
+printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know"); **// the output will be: Complete the sentence: You know nothing, Jon Snow.**
+
+_printf("%        s", "Hello"); **// the output will be: Hello**
+
+_printf("%        k"); **// the output will be: % k**
